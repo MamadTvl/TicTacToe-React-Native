@@ -30,5 +30,14 @@ and
 You can checkout to branch production_ios and get the .app for ios with Xcode
 
 
-preview of the App
+<img
+    src="https://github.com/MamadTvl/TicTacToe-React-Native/blob/main/images/iphone.png"
+     alt="ios"
+     width="30%"
+   />
+   <img
+    src="https://github.com/MamadTvl/TicTacToe-React-Native/blob/main/images/android.png"
+     alt="ios"
+     width="35%"
+   />
 
