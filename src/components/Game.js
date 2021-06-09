@@ -1,12 +1,14 @@
 import React from "react";
 import {Text, View} from "react-native";
 import {Picker} from '@react-native-picker/picker';
-import { Button } from 'react-native-paper';
+import {Button} from 'react-native-paper';
 import {styles} from "./styles/GameStyle";
 import {useDispatch, useSelector} from "react-redux";
 import {changeDifficulty} from "../redux";
-import {changeMode} from "../redux/board/action";
+import {changeMode, restartGame} from "../redux/board/action";
 import Board from "./Board";
+import {CodeIcon, HeartIcon} from "./icons";
+import * as Linking from 'expo-linking';
 
 
 const Game = () => {
@@ -58,18 +60,60 @@ const Game = () => {
                 player1.winner && player2.winner ?
                     <Text style={styles.info}>Draw</Text>
                     :
-                    <>
-                        <Text style={styles.info}>{player1.winner && `${player1.name} win`}</Text>
-                        <Text style={styles.info}>{player2.winner && `${player2.name} win`}</Text>
-                    </>
+                    player1.winner ?
+                        <Text style={styles.info}>
+                            {player1.winner && `${player1.name} win`}
+                        </Text>
+                        :
+                        <Text style={styles.info}>
+                            {player2.winner && `${player2.name} win`}
+                        </Text>
             }
             <Button
                 mode={'contained'}
-                onPress={() => console.log('adad')}
+                onPress={() => dispatch(restartGame())}
 
             >
                 Restart
             </Button>
+            <CodeIcon/>
+            <View style={{
+                display: 'flex',
+                flexDirection: 'row',
+            }}>
+                <Text
+                    style={{
+                        fontSize: 16,
+                        marginRight: 8,
+                    }}
+
+                >
+                    created with
+                </Text>
+                <HeartIcon/>
+                <Text
+                    style={{
+                        fontSize: 16,
+                        marginLeft: 8,
+                    }}
+                >
+                    By
+                </Text>
+                <Text style={{
+                    fontSize: 16,
+                    marginLeft: 8,
+                    textDecorationLine: "underline",
+                    textDecorationStyle: "solid",
+                    textDecorationColor: "#607D8B"
+                }}
+                      onPress={() => {
+                          Linking.openURL('https://github.com/MamadTvl/TicTacToe-React-Native')
+                      }}
+                >
+                    MamadTvl
+                </Text>
+
+            </View>
         </View>
     )
 }
