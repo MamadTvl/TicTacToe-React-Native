@@ -1,21 +1,39 @@
-import { StatusBar } from 'expo-status-bar';
+import 'react-native-gesture-handler';
+import {StatusBar} from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import Game from "./src/components/Game";
+import {Provider} from "react-redux";
+import store from "./src/redux/store";
+
+const Stack = createStackNavigator();
+
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    return (
+        <Provider store={store}>
+            <NavigationContainer>
+                <Stack.Navigator
+                    mode={'modal'}
+                    headerMode={"float"}
+                >
+                    <Stack.Screen
+                        name={'Game'}
+                        component={Game}
+                        options={{
+                            animationTypeForReplace: 'push',
+                            title: 'Tic-Tac-Toe',
+                            headerStyle: {
+                                // backgroundColor: 'transparent',
+                            },
+                        }}
+                    />
+                </Stack.Navigator>
+                <StatusBar style={'auto'}/>
+            </NavigationContainer>
+        </Provider>
+    );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+

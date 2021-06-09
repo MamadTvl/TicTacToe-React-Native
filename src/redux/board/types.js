@@ -1,0 +1,7 @@
+export const MOVE = 'MOVE'
+export const FINISH_GAME = 'FINISH_GAME'
+export const CHANGE_PLAYER_STATE = 'CHANGE_PLAYER_STATE'
+export const CHANGE_DIFFICULTY = 'CHANGE_DIFFICULTY'
+export const CHANGE_TURN = 'CHANGE_TURN'
+export const CHANGE_MODE = 'CHANGE_MODE'
+export const RESTART_GAME = 'RESTART_GAME'
