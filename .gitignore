@@ -1,3 +1,4 @@
+/.idea
 node_modules/
 .expo/
 npm-debug.*
@@ -8,6 +9,7 @@ npm-debug.*
 *.mobileprovision
 *.orig.*
 web-build/
+/yarn.lock
 
 # macOS
 .DS_Store
