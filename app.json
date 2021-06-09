@@ -23,10 +23,13 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.mamadtvl.TicTacToe"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "simple tic tac toe (min max algorithm)  with react native ",
+    "githubUrl": "https://github.com/MamadTvl/TicTacToe-React-Native"
   }
 }
