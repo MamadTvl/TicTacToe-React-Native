@@ -2,6 +2,7 @@
   "scripts": {
     "start": "react-native start",
     "android": "react-native run-android",
+    "build:ios": "react-native bundle --entry-file='index.js' --bundle-output='./ios/main.jsbundle' --dev=false --platform='ios'",
     "ios": "react-native run-ios",
     "web": "expo start --web",
     "eject": "expo eject"
@@ -27,7 +28,6 @@
     "react-redux": "^7.2.4",
     "redux": "^4.1.0",
     "expo-splash-screen": "~0.10.2",
-    "expo-updates": "~0.5.4",
     "react-native-unimodules": "~0.13.3"
   },
   "devDependencies": {
